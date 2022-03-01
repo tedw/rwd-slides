@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Responsive Development</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- CSS Animations -->
+		<link rel="stylesheet" href="css/animate.min.css">
+
+		<!-- Custom Styles -->
+		<link rel="stylesheet" href="css/custom.css">
+
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<!-- <p id="arrow-msg" class="animated bounceInRight">Use these links or the arrow keys to navigate</p> -->
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Responsi<span class="highlight">v</span>e Development</h1>
+					<p class="byline">By Ted Whitehead</p>
+				</section>
+
+				<!-- Responsive -->
+				<section>
+					<h2>What is Responsive</h2>
+					<blockquote>
+						<p>Responsiveness is what a website does when it's loaded into an unknown browser on an unknown device by an unknown individual. It's how you deal with "the most hostile software development environment ever imagined" (via Douglas Crockford). Like progressive enhancement it's a strategy that frees you to work with the web rather than fight against it.</p>
+						<cite><a href="http://blog.andyhume.net/responsive-by-default/">Andy Hume</a></cite>
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>It's Not Perfect</h2>
+					<blockquote>
+						<p>It's important to understand and accept that current technology and methodology won't always get you where you need to be. Pretending we can create a perfect solution just because we've discovered media queries is as dangerous as ignoring responsive design altogether.</p>
+						<cite><a href="http://blog.andyhume.net/responsive-by-default/">Andy Hume</a></cite>
+					</blockquote>
+				</section>
+
+
+				<!-- FAQ - Responsive, Adaptive  -->
+				<section>
+					<h2>Responsive vs. Adaptive</h2>
+					<dl class="break">
+						<dt>adaptive <a class="small" href="http://www.sony.com/">example</a></dt>
+						<dd>Coined by <a href="http://www.alistapart.com/articles/switchymclayout">Marc van den Dobbelsteen</a> in 2006</dd>
+						<dd>An early technique for creating flexible sites utilizing a combination of fixed and fluid grids</dd>
+						<dd>This worked in the past when there were few mobile devices with standard screen sizes, but it isn't a best-practice today given the diversity of <a href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density">mobile devices</a> on the market. An adaptive site will not be able to make best use of space across all devices.</dd>
+
+						<dt>responsive <a class="small" href="http://www.smashingmagazine.com/">example</a></dt>
+						<dd>Coined by <a href="http://www.alistapart.com/articles/responsive-web-design/">Ethan Marcotte</a> in 2010</dd>
+						<dd>It was originally defined as using fluid grids, flexible images, and media queries to deliver elegant visual experiences across all devices (<a href="http://mediaqueri.es/">more examples</a>).</dd>
+						<dd>Today, responsive has become an umbrella term for all aspects of creating websites optimized for devices of any size or capability.</dd>
+						<dd>Below are two excellent presentations on responsive design by two experts in the area:
+							<ul>
+								<li><a href="http://vimeo.com/55112449">Rolling Up Our Responsive Sleeves</a> (Ethan Marcotte, AEA Boston 2012)</li>
+								<li>
+									<a href="http://bradfrostweb.com/blog/post/beyond-squishy-the-principles-of-adaptive-design/">Beyond Squishy: The Principles of Adaptive Design</a> (Brad Frost, SXSW 2013)
+									<p class="small break">Video of earlier version of above presentation: <a href="http://vimeo.com/channels/smashingconf/55076713">Beyond Media Queries: An Anatomy of an Adaptive Web Experience</a> (Smashing Conference 2012)</p>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</section>
+
+
+				<!-- RWD  -->
+				<section>
+					<h2>Responsive Web Design</h2>
+					<p><em>&ldquo;Responsive&rdquo; has become an umbrella term, covering all aspects of mobile web development, not just fluid layouts.</em></p>
+
+					<p><a href="http://www.slideshare.net/bradfrostweb/beyond-squishy-the-principles-of-adaptive-design-17070713" class="small"><img src="img/rwd-iceberg.jpg" alt="Responsive iceberg" /></a></p>
+
+					<p class="small">From <a href="http://bradfrostweb.com/blog/post/beyond-squishy-the-principles-of-adaptive-design/">Beyond Squishy: The Principles of Adaptive Design</a> (Brad Frost, SXSW 2013)</p>
+				</section>
+
+				<!-- FAQ - Progressive Enhancement  -->
+				<section>
+					<h2>Progressive Enhancement vs. Mobile First</h2>
+					<dl class="break">
+						<dt>progressive enhancement</dt>
+						<dd>Coined by <a href="http://www.hesketh.com/thought-leadership/our-publications/progressive-enhancement-and-future-web-design">Steven Champeon</a> in 2003</dd>
+						<dd>Bottom-up strategy of developing for the lowest common denominator first, then enhancing the site for browsers with additional capabilities (e.g. touch events and geolocation). See this <a href="https://github.com/alphagov/government-service-design-manual/blob/master/service-manual/making-software/progressive-enhancement.md">gov.uk write-up</a> for more details.</dd>
+						<dd>The opposite of <em>graceful degradation</em>, which takes the top-down approach</dd>
+					</dl>
+
+					<p><a class="small" href="http://bradfrostweb.com/blog/web/mobile-first-responsive-web-design/"><img src="img/progressive_enhancement.jpg" /></a></p>
+				</section>
+
+
+
+				<!-- FAQ - Mobile First  -->
+				<section>
+					<h2>Progressive Enhancement vs. Mobile First</h2>
+					<dl class="break">
+						<dt>mobile first</dt>
+						<dd>Coined by <a href="http://www.lukew.com/ff/entry.asp?933">Luke Wroblewski</a> in 2009</dd>
+						<dd>Same idea as progressive enhancement, but with an additional focus on <strong>content priority</strong></dd>
+					</dl>
+
+					<p><a class="small" href="http://bradfrostweb.com/blog/mobile/the-many-faces-of-mobile-first/"><img src="img/mobile-first-crop.jpg" /></a></p>
+				</section>
+
+				<section>
+					<h2>Content Priority</h2>
+					<p class="break">Example documentation from Brookings</p>
+					<p class="small">(numbers correspond to the source order in the small screen view)</p>
+					<p><img src="img/brookings-priority.jpg"/></p>
+				</section>
+
+
+				<!-- FAQ - Mobile First  -->
+				<section>
+					<h2>Media Queries vs. Breakpoints</h2>
+					<dl class="break">
+						<dt>media queries</dt>
+						<dd>Part of the CSS3 specification, they gives us the ability to conditionally apply styles based on various device properties, such as screen width, height, and resolution.</dd>
+						<dd>Supported by Opera in 2007, Safari in 2008, Firefox in 2009,  Chrome in 2010, and IE in 2011 (<a href="http://caniuse.com/css-mediaqueries">full browser support table</a>)</dd>
+						<!--
+							<dd>Supported by <a href="http://en.wikipedia.org/wiki/History_of_the_Opera_web_browser#Version_9">Opera 9.5</a> in 2007, <a href="http://en.wikipedia.org/wiki/Safari_(web_browser)#Safari_3">Safari 3.1</a> in 2008, <a href="http://en.wikipedia.org/wiki/Firefox_3.5">Firefox 3.5</a> in 2009,  <a href="http://en.wikipedia.org/wiki/Google_Chrome#Release_history">Chrome 4.0</a> in 2010, and <a href="http://en.wikipedia.org/wiki/Internet_Explorer#Internet_Explorer_9">IE 9</a> in 2011 (<a href="http://caniuse.com/css-mediaqueries">full browser support table</a>)</dd>
+						-->
+						<dd>They became a <a href="http://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">W3C recommended standard</a> in 2012</dd>
+					</dl>
+
+					<pre><code contenteditable>/* These styles only apply when the viewport is >= 500px */
+@media only screen and (min-width: 500px) {
+  .columns { float: left }
+}
+</code></pre>
+
+					<dl class="break">
+						<dt>breakpoint</dt>
+						<dd>The width at which a media query takes effect, or is no longer applied</dd>
+						<dd>Breakpoints should be determined by the content, not the most common device sizes. This will ensure the best possible layout on any device, present or future.</dd>
+						<dd>Designers should take typography into account when deciding breakpoints to ensure optimal readability at any width (see <a href="http://www.smashingmagazine.com/2013/03/01/logical-breakpoints-responsive-design/">Logical Breakpoints For Your Responsive Design</a>)</dd>
+					</dl>
+				</section>
+
+
+				<section>
+					<h2>Choosing Breakpoints</h2>
+					<blockquote class="break">
+						<p>...breakpoints should be defined by &lsquo;when it looks appropriate&rsquo; rather than conforming to device dimensions, which date very, very quickly.</p>
+						<cite><a href="http://www.tangledindesign.com/blog/deciding-what-responsive-breakpoints-to-use/">Elliot Jay Stocks</a></cite>
+					</blockquote>
+
+					<p>Smithsonian was caught off-guard when the iPhone 5 was released, since the longer phone was triggering desktop mode in landscape orientation (<a href="https://trac.threespot.com/si06/ticket/121">Trac ticket</a>).</p>
+				</section>
+
+				<section>
+					<!-- <h2>Choosing Breakpoints</h2> -->
+					<h3 class="break">Designing for specific devices is a fool's errand&hellip;</h3>
+					<p><a href="http://bradfrostweb.com/blog/post/device-fatigue/"><img src="img/devices.jpg" alt="Lots of devices" /></a></p>
+				</section>
+
+				<section>
+					<!-- <h2>Choosing Breakpoints</h2> -->
+					<h3 class="break">&hellip;and will only get worse.</h3>
+					<p><img src="img/future-web-devices-medium.jpg" alt="Future web devices" /></p>
+				</section>
+
+				<!--
+				<section>
+					<h2>Choosing Breakpoints</h2>
+					<blockquote class="break">
+						<p>Disruption will only accelerate. The quantity and diversity of connected devices&mdash;many of which we haven’t imagined yet&mdash;will explode, as will the quantity and diversity of the people around the world who use them.</p>
+						<cite><a href="http://futurefriend.ly/">Future Friendly</a></cite>
+					</blockquote>
+				</section>
+				-->
+
+				<!-- Smashing Breakpoints  -->
+				<section>
+					<h2>Breakpoint Example</h2>
+
+					<p><a href="http://www.smashingmagazine.com/">Smashing</a> has 5 main breakpoints&mdash;500px, 800px, 1020px, 1120px, and 1450px&mdash;none of which target a particular device.</p>
+
+					<p><a href="http://mediaqueri.es/sm/"><img src="img/smashing-screens.jpg" /></a></p>
+				</section>
+
+
+				<!-- Smashing Breakpoints  -->
+				<section>
+					<h2>Responsive Tools</h2>
+					<p>These tools make it much easier to test how a responsive site looks at various screen sizes:</p>
+					<ul class="break">
+						<li><a href="http://lab.maltewassermann.com/viewport-resizer/">Viewport Resizer Bookmarklet</a></li>
+						<li><a href="http://responsive.is/smashingmagazine.com">Responsive.is</a> by <a href="http://typecast.com/">Typecast</a></li>
+						<li><a href="http://www.responsinator.com/">The Responsinator</a></li>
+						<li><a href="https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh">Window Resizer Chrome Plugin</a></li>
+						<li><a href="https://addons.mozilla.org/en-us/firefox/addon/firesizer/">Firesizer Firefox Add-on</a></li>
+						<li><a href="https://hacks.mozilla.org/2012/07/debugger-responsive-design-view-and-more-in-firefox-aurora-15/#responsive-design-view">Firefox's Responsive Design View</a></li>
+						<li><a href="http://seesparkbox.com/foundry/media_query_bookmarklet">Media Query Bookmarklet (for developers)</a></li>
+					</ul>
+				</section>
+
+
+				<!-- Prototyping  -->
+				<section>
+					<h2>Prototyping is the New Photoshop</h2>
+
+					<div>
+						<h3>Articles</h3>
+						<ul>
+							<li><a href="http://bradfrostweb.com/blog/post/the-post-psd-era/">The Post-PSD Era</a>, Brad Frost</li>
+							<li><a href="http://37signals.com/svn/posts/1061-why-we-skip-photoshop">Why We Skip Photoshop</a>, Jason Fried, 37signals</li>
+							<li><a href="http://gettingreal.37signals.com/ch04_Ignore_Details_Early_On.php">Ignore Details Early On</a>, from "Getting Real" by 37signals</li>
+							<li><a href="http://seesparkbox.com/foundry/our_new_responsive_design_deliverable_the_style_prototype">Our New Responsive Design Deliverable: The Style Prototype</a>, Jeremy Loyd, Sparkbox</li>
+                            <li><a href="http://www.smashingmagazine.com/2013/04/22/repurposing-photoshop/">Repurposing Photoshop For The Web</a>, Smashing Magazine</li>
+                            <li><a href="http://alistapart.com/article/responsive-comping-obtaining-signoff-with-mockups">Responsive Comping: Obtaining Signoff without Mockups</a>, A List Apart</li>
+						</ul>
+					</div>
+
+					<div class="break">
+						<h3>Examples</h3>
+						<ul>
+							<li><a href="http://foundation.zurb.com/prototype-example2.php">Example prototype</a> using the <a href="http://foundation.zurb.com/">Foundation</a> framework</li>
+                            <li><a href="http://aafh-css.heroku.com/wireframes">American Association For Homecare</a> wireframe by <a href="http://bearded.com/">Bearded</a></li>
+							<li>Advisory Board agenda page <a href="http://jsbin.com/azeguf/latest">prototype</a></li>
+                            <!--
+							<li>Smithsonian prototype examples: <a href="http://local.threespot.com/smithsonian.threespot.com/html/si06/dev/index.html">1</a>, <a href="http://local.threespot.com/smithsonian.threespot.com/html/si06/dev-square/index.html">2</a>, <a href="http://smithsonian.threespot.com/si06/dev/index.html">3</a>, <a href="http://seriouslyamazing.si.edu/">live site</a></li>
+                            -->
+						</ul>
+					</div>
+
+				</section>
+
+
+				<!-- Coding Examples -->
+				<section>
+					<h2>Coding a Responsive Layout</h2>
+
+					<blockquote class="break">
+						<p>The web is responsive on its own&mdash;by default. It's us that's been breaking it all these years by placing content in fixed-width containers.</p>
+						<cite><a href="http://blog.andyhume.net/responsive-by-default/">Andy Hume</a></cite>
+					</blockquote>
+
+					<div>
+						<p class="break">In the following examples, we will walk through different approaches to coding a responsive layout using media queries.</p>
+						<ul class="break">
+							<li><a href="http://jsbin.com/ohetel/latest">Base Markup</a></li>
+							<li><a href="http://jsbin.com/ugoyas/latest">Desktop First</a></li>
+							<li><a href="http://jsbin.com/unibim/latest">Mobile First</a></li>
+						</ul>
+					</div>
+				</section>
+
+				<!-- Flexibility -->
+				<section>
+					<h2>Embrace the Flexibility <br>of the Web</h2>
+					<blockquote>
+						<p>The web's greatest strength, I believe, is often seen as a limitation, as a defect. It is the nature of the web to be flexible, and it should be our role as designers and developers to embrace this flexibility, and produce pages which, by being flexible, are accessible to all.</p>
+						<cite><a href="http://www.alistapart.com/articles/dao/">John Allsopp</a>, 2000</cite>
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Fluid Typography</h2>
+					<ul class="break medium">
+						<li><a href="http://trentwalton.com/2012/06/19/fluid-type/">Fluid Type</a>, Trent Walton</li>
+						<li><a href="http://informationarchitects.net/blog/responsive-typography-the-basics/">Responsive Typography: The Basics</a>, Oliver Reichenstein</li>
+						<li><a href="http://www.smashingmagazine.com/2013/03/01/logical-breakpoints-responsive-design/">Logical Breakpoints For Your Responsive Design</a>, Vasilis van Gemert</li>
+						<li><a href="http://viljamis.com/blog/2013/prototyping-responsive-typography/">Prototyping Responsive Typography</a>, Viljami Salminen</li>
+						<li><a href="http://danielmall.com/articles/responsive-line-breaks/">Responsive Line Breaks</a>, Dan Mall</li>
+						<li>Plugins:
+							<ul>
+								<li><a href="http://fittextjs.com/">FitText.js</a></li>
+								<li><a href="http://fitvidsjs.com/">FitVids.js</a></li>
+								<li><a href="http://www.frequency-decoder.com/demo/slabText/">slabText.js</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>With Responsive Comes Additional Challenges</h2>
+					<ul class="break">
+						<li>High resolution devices (<a href="http://en.wikipedia.org/wiki/List_of_mobile_phones_with_HD_display">list</a>)
+							<ul>
+								<li><a href="https://github.com/scottjehl/picturefill">Picturefill</a></li>
+								<li><a href="https://github.com/adamdbradley/foresight.js?utm_source=html5weekly">Foresight.js</a></li>
+								<li><a href="http://retinajs.com/">Retina.js</a></li>
+								<li><a href="http://css-tricks.com/examples/IconFont/">Web font icons</a>
+									<ul>
+										<li><a href="http://fontello.com/">Fontello</a></li>
+										<li><a href="http://conor.cc/posts/icon-stacks">Icon Stacks</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Touch
+							<ul>
+								<li><a href="https://github.com/ftlabs/fastclick">Fastclick.js</a></li>
+								<li><a href="http://swipejs.com/">Swipe.js</a></li>
+								<li><a href="http://eightmedia.github.com/hammer.js/">Hammer.js</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Solving These Challenges Can Create New Ones</h2>
+					<p class="break left">In order to optimize performance for low bandwidth devices, we need to change the way we load assets. Instead of loading everything that may be needed up front, we load only what's needed at any given time. However, loading assets <strong>asynchronously</strong> can add additional complications.</p>
+					<p class="left break">Adding <strong>web fonts</strong> to a site adds complexity, since we don't know exactly when the font will be loaded. Sometimes, we must add code to determine when the font is ready to use in order to trigger other code that depends on it (<a href="http://10.0.5.93/">HHMI</a> example).</p>
+				</section>
+
+
+				<!--
+				<section>
+					<h2>Separate Mobile Site?</h2>
+
+					<p><a href="http://sixrevisions.com/mobile/methods-mobile-websites/">A Comparison of Methods for Building Mobile-Optimized Websites</a></p>
+					<p><a href="http://www.newfangled.com/what_weve_learned_about_responsive_design">What We've Learned About Responsive Design</a></p>
+				</section>
+				-->
+
+<!--
+					<section>
+					<h2>Pretty Code</h2>
+					<pre><code contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) ) {
+        node.className += ' roll';
+      }
+    };
+  }
+}
+					</code></pre>
+					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section>
+					<h2>Intergalactic Interconnections</h2>
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>fragment Styles</h2>
+						<p>There's a few styles of fragments, like:</p>
+						<p class="fragment grow">grow</p>
+						<p class="fragment shrink">shrink</p>
+						<p class="fragment roll-in">roll-in</p>
+						<p class="fragment fade-out">fade-out</p>
+						<p class="fragment highlight-red">highlight-red</p>
+						<p class="fragment highlight-green">highlight-green</p>
+						<p class="fragment highlight-blue">highlight-blue</p>
+					</section>
+				</section>
+-->
+
+				<section>
+					<h1>RWD Tech Audit</h1>
+					<ul class="break">
+						<li>Browser spec, targeted devices</li>
+						<li>Content priority&mdash;this informs how we write the HTML</li>
+						<li>Functionality audit
+							<ul>
+								<li>Is there anything that won't work on touch devices (e.g. lightboxes, hover-based nav, Flash)?</li>
+								<li>If so, what do we do on those devices?</li>
+								<li>Will we support touch gestures, like swipe?</li>
+							</ul>
+						</li>
+						<li><a href="https://github.com/rcherny/Front-End-Architecture-Checklist/blob/master/BaseFrontEndArch.md">Lots of other stuff&hellip;</a></li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h1>Miscellany</h1>
+
+					<ul class="break">
+						<li>Always consider best and worst-case scenario content</li>
+						<li>When in doubt, prototype it</li>
+						<li>Font icons are better than image icons</li>
+						<li>Don't load social buttons until requested (<a href="http://filamentgroup.com/lab/socialcount/">plugin</a>)</li>
+						<li>Embrace CSS3 capabilities of mobile devices (<a href="http://leaverou.github.com/animatable/">animations</a>, <a href="http://lea.verou.me/css3patterns/">patterns</a>, <a href="http://www.creativesandbox.com/guidebook">3D effects</a>)
+							<ul>
+								<li><a href="http://tympanus.net/Tutorials/CircleHoverEffects/index.html">Cool hover animations</a></li>
+								<li><a href="http://tympanus.net/Tutorials/3DHoverEffects/">3D hover effect</a></li>
+								<li><a href="http://tympanus.net/Tutorials/FullscreenBookBlock/">Page turn effect</a></li>
+								<li><a href="http://www.creativesandbox.com/guidebook">Google's crazy popup book</a></li>
+							</ul>
+						</li>
+                        <li>Read all of the resources on <a href="http://bradfrost.github.io/this-is-responsive/">This is Responsive</a></li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h1>Questions?</h1>
+				</section>
+
+
+				<section>
+					<h1>Thanks!</h1>
+					<p class="byline">By Ted Whitehead</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				// Open all external links in a new window
+				$("a[href^='http']").attr('target','_blank');
+
+				// Animations
+
+			});
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				autoSlide: 0,
+				mouseWheel: false,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+
+	</body>
+</html>

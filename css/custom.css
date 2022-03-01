@@ -1,0 +1,250 @@
+/* Custom Styles */
+body {background: #fff url('../img/noisy_grid.png')}
+
+.reveal,
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	color: #222;
+	line-height: 1.1;
+}
+
+.reveal h1 {
+	font-size: 3em;
+	margin-bottom: 0.3em;
+}
+
+.reveal h3 {font-size: 1.1em}
+
+.reveal .small {font-size: 0.6em}
+.reveal .medium {font-size: 0.9em}
+
+.reveal a:not(.image) {
+  vertical-align: bottom;
+}
+
+.reveal ul,
+.reveal ol {
+	display: block;
+}
+
+.reveal li ul,
+.reveal li ol,
+.reveal dd ul {
+	margin-top: 0.25em;
+}
+
+.reveal li ul {margin-bottom: 0.5em}
+
+.reveal del {color: #888}
+
+.reveal .left {text-align: left}
+
+.reveal .roll {vertical-align: baseline}
+
+.reveal .byline {
+	color: #999;
+	font-size: 0.7em;
+}
+
+.reveal h1 .highlight {
+	cursor: help;
+	position: relative;
+
+    -webkit-transition: all 0.5s ease-out;
+       -moz-transition: all 0.5s ease-out;
+         -o-transition: all 0.5s ease-out;
+            transition: all 0.5s ease-out;
+}
+
+.reveal h1 .highlight:hover {
+	color: #0BA6B1;
+	text-shadow: none;
+	top: -5px;
+}
+
+.reveal h1 .highlight:after {
+	color: #222;
+	content: 'bl';
+	font-size: 0.5em;
+	opacity: 0;
+	position: absolute;
+	margin-left: -1em;
+	margin-top: -0.5em;
+}
+
+.reveal h1 .highlight:hover:after {opacity: 1}
+
+@-webkit-keyframes myBounce {
+	0% 		{color: #222; top: 0}
+	60%		{color: #222; top: 0}
+	80% 	{color: #0BA6B1; top: -5px}
+	100% 	{color: #222; top: 0}
+}
+
+@-moz-keyframes myBounce {
+	0% 		{color: #222; top: 0}
+	80%		{color: #222; top: 0}
+	90% 	{color: #0BA6B1; top: -5px}
+	100% 	{color: #222; top: 0}
+}
+
+@-o-keyframes myBounce {
+	0% 		{color: #222; top: 0}
+	80%		{color: #222; top: 0}
+	90% 	{color: #0BA6B1; top: -5px}
+	100% 	{color: #222; top: 0}
+}
+
+@keyframes myBounce {
+	0% 		{color: #222; top: 0}
+	80%		{color: #222; top: 0}
+	90% 	{color: #0BA6B1; top: -5px}
+	100% 	{color: #222; top: 0}
+}
+
+.reveal h1 .highlight {
+    -webkit-animation: myBounce 3s infinite; /* Safari 5, Chrome */
+       -moz-animation: myBounce 3s infinite; /* Firefox 5-15 */
+         -o-animation: myBounce 3s infinite; /* Opera 12+ */
+            animation: myBounce 3s infinite; /* Safari 5, Chrome, Firefox 16+ */
+}
+
+.reveal h1 .highlight:hover {
+    -webkit-animation: none;
+       -moz-animation: none;
+         -o-animation: none;
+            animation: none;
+}
+
+
+.reveal .break {margin-top: 1em}
+
+
+/* Colors */
+.reveal a:not(.image) {
+  color: #0BA6B1;
+}
+
+.reveal .roll span:after {
+  background: #0BA6B1;
+}
+
+.reveal a:hover img {
+  border-color: #0BA6B1;
+}
+
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #0BA6B1;
+}
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #0BA6B1;
+}
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #0BA6B1;
+}
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #0BA6B1;
+}
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #0B777E;
+}
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #0B777E;
+}
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #0B777E;
+}
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #0B777E;
+}
+
+.reveal .progress span {
+  background: #0BA6B1;
+}
+
+
+/* Definition List */
+.reveal dl {
+	margin-bottom: 1em;
+	text-align: left;
+}
+
+.reveal dl:last-of-type {margin-bottom: 0}
+
+.reveal dt {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.reveal dt {font-size: 0.8em}
+.reveal dd {font-size: 0.7em}
+
+.reveal dt {margin-top: 1em}
+.reveal dt:first-child {margin-top: 0}
+
+.reveal dd {
+	display: list-item;
+	margin-left: 1em;
+}
+
+.reveal a.small {
+	font-size: 0.8em;
+	font-weight: normal;
+	position: relative;
+	bottom: -1px;
+}
+
+/* Blockquote */
+.reveal blockquote {
+	background: #fff;
+	margin-bottom: 1em;
+	padding: 1em;
+	width: 75%;
+}
+
+.reveal blockquote p {
+	line-height: 1.4;
+}
+
+/* Arrow Message */
+#arrow-msg {
+	bottom: 60px;
+	font: 18px/1 "Open Sans", Times, "Times New Roman", serif;
+	margin: 0;
+	position: absolute;
+	right: 158px;
+
+	-webkit-animation-duration: 2s;
+	   -moz-animation-duration: 2s;
+	     -o-animation-duration: 2s;
+	        animation-duration: 2s;
+
+	-webkit-animation-delay: 5s;
+	   -moz-animation-delay: 5s;
+	     -o-animation-delay: 5s;
+	        animation-delay: 5s;
+}
+
+#arrow-msg:after {
+	content: '\27B8';
+	display: block;
+	font-size: 32px;
+	position: absolute;
+	right: -40px;
+	top: -6px;
+}
